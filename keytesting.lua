@@ -1,7 +1,11 @@
 local key = _G.key
 local hts = game:GetService('HttpService')
+print('Found Varibles')
 
-if hts:JSONDecode(hts:GetAsync('https://work.ink/_api/v2/token/isValid/' .. key)).valid then
+local check = "https://work.ink/_api/v2/token/isValid/"
+print('Check: ' .. check)
+if hts:JSONDecode(hts:GetAsync(check .. key)).valid then
+	print(hts:JSONDecode(hts:GetAsync(check .. key)).valid)
 	if not game.Loaded then game.Loaded:Wait() end
 	
     local repo = "https://raw.githubusercontent.com/deividcomsono/Obsidian/main/"
